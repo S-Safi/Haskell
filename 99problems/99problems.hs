@@ -96,3 +96,8 @@ myButLast'''' [_] = error "requires 2 or more values"
 myButLast'''' [x,_]  = x
 myButLast'''' (_:xs) = myButLast'' xs
 
+elementAt :: [a] -> Int -> a
+elementAt [] _ = error "Empty List"
+elementAt xs 1 = head xs
+elementAt xs n = elementAt (tail xs) (n - 1)
+
